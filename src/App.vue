@@ -16,6 +16,9 @@
       <span v-if="isLoggedIn()">
         <router-link to="/logout">Log Out</router-link>
       </span>
+      <span v-if="isLoggedIn()">
+        <router-link to="/organizations">Organizations</router-link>
+      </span>
     </div>
 
     <router-view />
