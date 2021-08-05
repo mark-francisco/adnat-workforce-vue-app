@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <span>
-        <router-link to="/">Home</router-link>
+      <span v-if="isLoggedIn()">
+        <router-link to="/portal">Main Portal</router-link>
         |
       </span>
       <span v-if="!isLoggedIn()">
@@ -14,13 +14,14 @@
         |
       </span>
       <span v-if="isLoggedIn()">
-        <router-link to="/logout">Log Out</router-link>
+        <router-link to="/organizations">Organizations</router-link>
+        |
       </span>
       <span v-if="isLoggedIn()">
-        <router-link to="/organizations">Organizations</router-link>
+        <router-link to="/logout">Log Out</router-link>
+        |
       </span>
     </div>
-
     <router-view />
   </div>
 </template>

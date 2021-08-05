@@ -28,7 +28,11 @@
     </form>
   </div>
 </template>
-
+<style>
+.error-messages {
+  color: red;
+}
+</style>
 <script>
 import axios from "axios";
 

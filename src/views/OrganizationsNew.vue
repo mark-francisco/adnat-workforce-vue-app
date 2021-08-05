@@ -54,7 +54,7 @@ export default {
         .post("/api/organizations", params)
         .then(() => {
           // console.log(res);
-          this.$router.push("/organizations/");
+          this.$router.push("/organizations");
         })
         .catch((err) => {
           this.errors = err.response.data.errors;

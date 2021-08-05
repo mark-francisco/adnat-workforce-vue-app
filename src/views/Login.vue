@@ -22,6 +22,9 @@
 </template>
 
 <style scoped>
+.error-messages {
+  color: red;
+}
 .btn {
   margin: 2rem 2.5rem;
 }

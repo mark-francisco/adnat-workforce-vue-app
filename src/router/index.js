@@ -1,20 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Portal from "../views/Portal.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 import Organizations from "../views/Organizations.vue";
 import OrganizationsNew from "../views/OrganizationsNew.vue";
+import OrganizationsEdit from "../views/OrganizationsEdit.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: "/portal",
+    name: "Portal",
+    component: Portal,
   },
   {
     path: "/signup",
@@ -45,6 +46,11 @@ const routes = [
     path: "/organizations/new",
     name: "OrganizationsNew",
     component: OrganizationsNew,
+  },
+  {
+    path: "/organizations/:id/edit",
+    name: "OrganizationsEdit",
+    component: OrganizationsEdit,
   },
 ];
 

@@ -1,11 +1,9 @@
 <script>
 // computed: {
-//     sortedDestinations: function () {
-//       return this.destinations.slice().sort(function (a, b) {
-//         // https://stackabuse.com/sorting-arrays-in-javascript/
-//         return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-//       });
-//     },
+//   sortedStops: function () {
+//     return this.currentTrip.stops.slice().sort(function (a, b) {
+//       return new Date(a.start_date) - new Date(b.start_date);
+//     });
 //   },
-//
+// },
 </script>
