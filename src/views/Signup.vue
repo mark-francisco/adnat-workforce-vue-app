@@ -56,8 +56,8 @@ export default {
       };
       axios
         .post("/api/users", params)
-        .then((response) => {
-          console.log(response.data);
+        .then(() => {
+          // console.log(response.data);
           this.$router.push("/login");
         })
         .catch((error) => {

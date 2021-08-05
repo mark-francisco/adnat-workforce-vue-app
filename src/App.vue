@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Adnat!</h1>
     <div id="nav">
       <span v-if="isLoggedIn()">
         <router-link to="/shifts">Shifts Portal</router-link>

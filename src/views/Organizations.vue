@@ -80,6 +80,7 @@ export default {
       if (confirm("You can only be in one Org. If you join this one, your existing shifts will be deleted.")) {
         let params = {
           organization_id: organization.id,
+          clear_shifts: true,
         };
         axios
           .patch(`/api/users/${this.currentUser.id}`, params)

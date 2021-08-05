@@ -64,9 +64,12 @@ export default {
           this.selectedUser = allUsers.filter((user) => {
             return user.email_address === this.emailAddress;
           });
+          if (this.selectedUser.length === 0) {
+            this.errors = ["Could not find the account."];
+          }
         })
-        .then(() => {
-          this.errors = ["Could not find the account."];
+        .catch(() => {
+          this.errors = ["Could not search for the account."];
         });
     },
     updatePassword() {
