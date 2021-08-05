@@ -1,6 +1,6 @@
 <template>
   <div class="portal">
-    <div v-if="!currentUser.organization_id">Log in and join an Organization first!</div>
+    <div v-if="!currentUser || !currentUser.organization_id">Join an Organization first!</div>
     <div v-else>this is your organization</div>
   </div>
 </template>
@@ -28,7 +28,17 @@ export default {
         }
       });
     },
-    getOrganization() {},
+    getOrganization() {
+      axios.get(`/api/organizations/${this.currentUser.organization_id}`);
+    },
   },
 };
+
+// computed: {
+//   sortedStops: function () {
+//     return this.currentTrip.stops.slice().sort(function (a, b) {
+//       return new Date(a.start_date) - new Date(b.start_date);
+//     });
+//   },
+// },
 </script>

@@ -57,7 +57,7 @@ export default {
           this.$router.push("/organizations");
         })
         .catch((err) => {
-          this.errors = err.response.data.errors;
+          this.errors = [err.response.data.errors];
         });
     },
   },

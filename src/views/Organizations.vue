@@ -8,6 +8,8 @@
         </li>
       </ul>
 
+      <h2>Welcome, {{ currentUser.name }}</h2>
+
       <div>
         <h3>Create New Organization:</h3>
         <router-link to="/organizations/new">
@@ -29,7 +31,7 @@
             Leave
           </button>
           <button v-else class="btn" v-on:click="joinOrganization(organization)">Join</button>
-          {{ organization.shifts }}
+          <!-- {{ organization.shifts }} -->
           <hr />
         </div>
       </div>
@@ -86,6 +88,7 @@ export default {
     leaveOrganization() {
       let params = {
         organization_id: "",
+        clear_shifts: true,
       };
       axios
         .patch(`/api/users/${this.currentUser.id}`, params)

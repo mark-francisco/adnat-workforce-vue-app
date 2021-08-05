@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <span v-if="isLoggedIn()">
-        <router-link to="/portal">Main Portal</router-link>
+        <router-link to="/portal">Shifts Portal</router-link>
         |
       </span>
       <span v-if="!isLoggedIn()">
