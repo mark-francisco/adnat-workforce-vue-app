@@ -15,7 +15,9 @@
         <label>Password:</label>
         <input type="password" v-model="password" />
       </div>
-      <input type="button" class="btn" value="Forgot Password" />
+      <router-link to="/forgotpassword">
+        <input type="button" class="btn" value="Forgot Password" />
+      </router-link>
       <input type="submit" class="btn" value="Log In!" />
     </form>
   </div>

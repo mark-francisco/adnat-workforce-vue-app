@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ShiftsIndex from "../views/ShiftsIndex.vue";
+
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -8,15 +8,12 @@ import ForgotPassword from "../views/ForgotPassword.vue";
 import Organizations from "../views/Organizations.vue";
 import OrganizationsNew from "../views/OrganizationsNew.vue";
 import OrganizationsEdit from "../views/OrganizationsEdit.vue";
+import ShiftsIndex from "../views/ShiftsIndex.vue";
+import ShiftsNew from "../views/ShiftsNew.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/shifts",
-    name: "ShiftsIndex",
-    component: ShiftsIndex,
-  },
   {
     path: "/signup",
     name: "Signup",
@@ -51,6 +48,16 @@ const routes = [
     path: "/organizations/:id/edit",
     name: "OrganizationsEdit",
     component: OrganizationsEdit,
+  },
+  {
+    path: "/shifts",
+    name: "ShiftsIndex",
+    component: ShiftsIndex,
+  },
+  {
+    path: "/shifts/new",
+    name: "ShiftsNew",
+    component: ShiftsNew,
   },
 ];
 

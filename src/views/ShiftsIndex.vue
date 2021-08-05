@@ -24,12 +24,8 @@
         <div v-for="shift in sortedShifts" v-bind:key="shift.id">
           <div class="shift">
             <h4>ID: {{ shift.id }}</h4>
-            <!-- <h4>User ID: {{ shift.user_id }}</h4> -->
             <h4>Employee Name: {{ shift.employee_name }}</h4>
             <p>Shift Date (start): {{ shift.shift_date }}</p>
-            <!-- <p>Start: {{ shift.start }}</p>
-            <p>Finish: {{ shift.finish }}</p> -->
-
             <span>Start Time: {{ new Date(shift.start).toUTCString().slice(-12) }}</span>
             /
             <span>Finish Time: {{ new Date(shift.finish).toUTCString().slice(-12) }}</span>
