@@ -1,6 +1,7 @@
 <template>
   <div class="organizations">
-    <div v-if="!currentUser">You need to log in first!</div>
+    <section v-if="!currentUser">You need to log in first!</section>
+
     <section v-else>
       <ul>
         <li class="error-messages" v-for="error in errors" v-bind:key="error">
@@ -46,6 +47,9 @@
 .btn {
   margin: 0rem 0.5rem;
 }
+hr {
+  width: 50%;
+}
 </style>
 
 <script>
@@ -79,7 +83,7 @@ export default {
       axios
         .patch(`/api/users/${this.currentUser.id}`, params)
         .then(() => {
-          this.$router.push("/portal");
+          this.$router.push("/shifts");
         })
         .catch((err) => {
           this.errors = err.response.data.errors;
@@ -93,7 +97,7 @@ export default {
       axios
         .patch(`/api/users/${this.currentUser.id}`, params)
         .then(() => {
-          this.$router.push("/portal");
+          this.$router.push("/shifts");
         })
         .catch((err) => {
           this.errors = err.response.data.errors;
