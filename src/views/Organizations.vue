@@ -77,31 +77,35 @@ export default {
         });
     },
     joinOrganization(organization) {
-      let params = {
-        organization_id: organization.id,
-      };
-      axios
-        .patch(`/api/users/${this.currentUser.id}`, params)
-        .then(() => {
-          this.$router.push("/shifts");
-        })
-        .catch((err) => {
-          this.errors = err.response.data.errors;
-        });
+      if (confirm("You can only be in one Org. If you join this one, your existing shifts will be deleted.")) {
+        let params = {
+          organization_id: organization.id,
+        };
+        axios
+          .patch(`/api/users/${this.currentUser.id}`, params)
+          .then(() => {
+            this.$router.push("/shifts");
+          })
+          .catch((err) => {
+            this.errors = err.response.data.errors;
+          });
+      }
     },
     leaveOrganization() {
-      let params = {
-        organization_id: "",
-        clear_shifts: true,
-      };
-      axios
-        .patch(`/api/users/${this.currentUser.id}`, params)
-        .then(() => {
-          this.$router.push("/shifts");
-        })
-        .catch((err) => {
-          this.errors = err.response.data.errors;
-        });
+      if (confirm("If you leave the Org, your shifts will be deleted.")) {
+        let params = {
+          organization_id: "",
+          clear_shifts: true,
+        };
+        axios
+          .patch(`/api/users/${this.currentUser.id}`, params)
+          .then(() => {
+            this.$router.push("/shifts");
+          })
+          .catch((err) => {
+            this.errors = err.response.data.errors;
+          });
+      }
     },
     getCurrentUser() {
       axios.get("/api/users").then((res) => {
